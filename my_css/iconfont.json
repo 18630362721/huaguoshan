@@ -1,0 +1,79 @@
+{
+  "id": "2025746",
+  "name": "my_text",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "12911875",
+      "name": "下 拉",
+      "font_class": "xiala",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "251930",
+      "name": "yonghu",
+      "font_class": "renbudaiwaiquan",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "632974",
+      "name": "帮助",
+      "font_class": "bangzhu",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "1983835",
+      "name": "中国地图",
+      "font_class": "zhongguoditu",
+      "unicode": "e62e",
+      "unicode_decimal": 58926
+    },
+    {
+      "icon_id": "4690460",
+      "name": "我的订单",
+      "font_class": "wodedingdan",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "5126086",
+      "name": "水果",
+      "font_class": "shuiguo",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "5483085",
+      "name": "水果",
+      "font_class": "shuiguo1",
+      "unicode": "e6ad",
+      "unicode_decimal": 59053
+    },
+    {
+      "icon_id": "8622860",
+      "name": "shoucang",
+      "font_class": "shoucang",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "9499801",
+      "name": "水果",
+      "font_class": "shuiguo2",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "11206632",
+      "name": "购物车",
+      "font_class": "gouwuche",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    }
+  ]
+}

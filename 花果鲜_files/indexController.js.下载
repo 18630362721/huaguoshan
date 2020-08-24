@@ -1,0 +1,159 @@
+var app = angular.module('indexApp', []);
+app.controller("indexController",['$scope','$http','$timeout',function ($scope,$http,$timeout) {
+    $scope.loading =false;
+    $scope.mag = false;
+    $scope.allLittle = false;
+    $scope.isLittle = false;
+    $scope.captcha='';
+
+    $scope.currentPage = 'home';
+    $scope.mobileImg = false;
+    $scope.webImg = false;
+
+    $scope.setScreen = function () {
+        var screen = window.screen.availHeight;
+        if(screen > 1200){
+            $scope.webImg = true;
+        }else {
+            $scope.mobileImg = true;
+        }
+    };
+    $scope.setScreen();
+
+    $scope.initData=function () {
+        $scope.userData = {
+            user_name:'',
+            user_phone:'',
+            callback_time:'全天',
+            join_purpose:'意向加盟',
+            user_massage:'',
+            code:'',
+            sex: '2',
+            province: '',
+            city: '',
+            budget: '3'
+        };
+    };
+
+    $scope.budgetOption = [
+        {value: '1', name: '15万-20万'},
+        {value: '2', name: '20万-30万'},
+        {value: '3', name: '30万以上'}
+    ];
+
+    $scope.sexOption = [
+        {value: '1', name: '男'},
+        {value: '2', name: '女'},
+    ];
+
+    $scope.initData();
+    $scope.validUserPhone = function(){
+        var regu =/^1[34578]\d{9}$/;
+        if($scope.userData.user_phone !== null){
+            if(!regu.test($scope.userData.user_phone)){
+                $scope.isLittle = true;
+            }else{
+                $scope.isLittle = false;
+            }
+        }
+    };
+    $scope.page_source = $('#page_source').html();
+    $scope.Feedback=function () {
+        var postData = {
+            user_name:$scope.userData.user_name,
+            user_phone:$scope.userData.user_phone,
+            callback_time:$scope.userData.callback_time,
+            join_purpose:$scope.userData.join_purpose,
+            user_massage:$scope.userData.user_massage,
+            code:$scope.userData.code,
+            source: 1,
+            page_source: $scope.page_source,
+            sex: $scope.userData.sex,
+            province: $scope.userData.province,
+            city: $scope.userData.city,
+            budget: $scope.userData.budget
+        };
+        if($scope.userData.user_phone == '' || $scope.userData.user_name == '' || $scope.userData.user_massage.length>200){
+            $scope.mag = true;
+            $('.msg').html('用户名和电话号码必须填写');
+            $timeout(function () {
+                $scope.mag = false;
+            },3000);
+            return;
+        }
+        $scope.loading =true;
+        $http.post('/submitFeedback',postData).success(function (data) {
+            if(data.result && data.result.toLowerCase() == 'true'){
+                $scope.loading =false;
+                $scope.mag = true;
+                $('.msg').html('您已成功提交加盟意向,客户经理会尽快联系您。');
+                $scope.refreshCaptcha();
+                $scope.userData.code='';
+                $scope.mag = true;
+                $timeout(function () {
+                    $scope.mag = false;
+                },2000);
+                $scope.userData.user_name = '';
+                $scope.userData.user_phone = '';
+                $scope.userData.code = '';
+            }else {
+                $scope.loading =false;
+                $scope.refreshCaptcha();
+                $scope.userData.code='';
+                $('.msg').html(data.msg);
+                $scope.mag = true;
+                $timeout(function () {
+                    $scope.mag = false;
+                },3000);
+            }
+        }).error(function (data) {
+            $scope.loading =false;
+            var msg = window.location.search.substring(5);
+            console.log(msg);
+            $('.msg').html('提交失败，请重新提交');
+            $scope.refreshCaptcha();
+            $scope.userData.code='';
+            $scope.mag = true;
+            $timeout(function () {
+                $scope.mag = false;
+            },2000);
+        });
+    };
+
+    $scope.refreshCaptcha=function (){
+        $scope.loading = true;
+        var now = new Date();
+        var ts = now.getMilliseconds();
+        document.getElementById('captcha').setAttribute('src', '/captcha/update?v=' + ts );
+        $timeout(function () {
+            $scope.loading = false;
+        },2000);
+    };
+
+
+    $http({
+        method: 'POST',
+        url: "regionGet",
+        data: {}
+    }).success(function (res) {
+        console.log(res);
+        if (res.result && res.result.toLowerCase() === "true") {
+            $scope.provinceOption = res.data;
+            $scope.userData.province = res.data[12].id.toString();
+            $scope.cityOption = res.data[12].subRegions;
+            $scope.userData.city = res.data[12].subRegions[3].id.toString();
+        } else {
+            console.log(res.msg);
+        }
+    });
+    
+    $scope.setCityOption = function () {
+        $scope.provinceOption.forEach(function (item, index) {
+            if(parseInt(item.id) === parseInt($scope.userData.province)){
+                $scope.cityOption = $scope.provinceOption[index].subRegions;
+                $scope.userData.city = $scope.cityOption[0].id.toString();
+            }
+        });
+
+    }
+}]);

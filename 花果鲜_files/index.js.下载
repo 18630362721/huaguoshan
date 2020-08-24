@@ -1,0 +1,31 @@
+$(window).scroll(function () {
+    if ($(document).scrollTop() > 1000) {
+        $('#toTop').css("display", "block");
+    } else {
+        $('#toTop').css("display", "none");
+    }
+    $('#carousel-carousel').carousel({
+        interval: 3000
+    })
+});
+$('#toTop').click(function () {
+    $('body,html').animate({'scrollTop': 0}, 800);
+});
+$('.go-link a').click(function (e) {
+    if (!($(e.target).hasClass('linkUs'))) {
+        e.preventDefault();
+        var href = $(e.target).attr('href');
+        if (href != undefined) {
+            if (href.indexOf('#') === -1) {
+                var height = $("#" + href).offset().top - 80;
+            } else {
+                var height = $(href).offset().top - 80;
+            }
+            $('body,html').animate({'scrollTop': height}, 400);
+        }
+    }
+});
+
+
+
+

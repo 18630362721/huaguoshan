@@ -1,0 +1,72 @@
+/**
+ * js解释器方法：用于支持在artTemplate的html模版中直接使用js代码
+ * @example {{if order.create_date > artEval("moment().unix()")}}
+ * @example {{artEval("moment.unix("+order.create_date+").format('YYYY-MM-DD')")}}
+ * @link http://www.w3school.com.cn/jsref/jsref_eval.asp
+ */
+template.helper("artEval", function(string) {
+    console.log('---------- index.html.()  artEval string='); console.dir(string);
+    return eval(string);
+});
+
+template.helper('buildProductImageUrl', function (pid, type) {
+    var imageType;
+    if (type) {
+        imageType = type.toString().toLowerCase();    
+    } else {
+        imageType = 'thumb'
+    }
+    
+    var url = appUrl+publicDir+'/Images/'+(pid % 50) + '/' +pid+'_'+imageType+'.jpg';
+    return url;
+});
+
+/**
+ * @author shishiqiang
+ * @version 2015-08-26
+ */
+template.helper('ymd', function (ts) {
+    if( 0 == ts ) return '1970年1月1日';
+    var d = new Date();
+    d.setTime(ts * 1000);
+    return d.getFullYear() + '年' + (d.getMonth()+1) +  '月' + d.getDate() + '日';
+});
+
+template.helper('fmtTime', function(datetime){
+    return moment(datetime).format('YYYY-MM-DD HH:mm:ss');
+});
+
+template.helper('fmtDate', function(datetime){
+    return moment.unix(datetime).format('YYYY-MM-DD');
+});
+
+template.helper('buildProductUrl', function(pid) {
+    return urlBuilder(pid,1);
+});
+
+template.helper('buildCategoryUrl', function(cid) {
+    return urlBuilder(cid,2);
+});
+
+template.helper('buildHelpUrl', function(aid) {
+    return urlBuilder(aid,3);
+});
+
+function urlBuilder(id ,type) {
+    var urlType = '';
+    switch(type) {
+        case 1:
+            urlType = 'Product';
+            break;
+        case 2:
+            urlType = 'Category';
+            break;        
+        case 3:
+            urlType = 'Help';
+            break;
+        default:
+            urlType = 'Product';
+
+    }
+    return appUrl+'/'+urlType+'/'+id+'.html';
+}

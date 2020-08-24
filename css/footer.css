@@ -1,0 +1,82 @@
+*{margin: 0;padding: 0;}
+.footer_nav{
+	width: 100%;
+	border-top:1px solid  #dfdfdf;
+}
+.foot{
+	width: 100%;
+	background-color: #FFFFFF;
+}
+.foot_center{
+	width: 990px;height: 62px;
+	margin: 0 auto;
+	position: relative;
+	margin-bottom: 30px;
+}
+.foot_center li{
+	font-size: 16px;
+	color: #636363;
+	list-style: none;
+	float: left;
+	margin: 10px 80px 0px 80px;
+	font-weight: bold;
+}
+.foot_center .foot_lin{
+	position: absolute;
+	top: 30px;
+}
+.foot_img{
+	margin-left: 10px;
+}
+.foot2{
+	margin: 0 auto;
+	width: 990px;height: 140px;
+	background-color: #f8f8f8;
+	padding: 20px 0px;
+}
+.foot2 div{
+	float: left;
+	padding: 8px 0px 0px 15px;
+}
+ul{
+	list-style: none;
+}
+.foot2_li{
+	font-size: 14px;
+	color: #777777;
+	font-weight: bold;
+}
+.foot2 a{
+	text-decoration: none;
+	font-size: 12px;
+	color: #5f6364;
+}
+.foot2 a:hover{
+	color: #77be22;
+	text-decoration: underline;
+}
+.foot2 li{
+	margin-bottom: 5px;
+	padding-right: 70px;
+}
+.foot2 .my_img{
+	position: relative;
+	top: 30px;
+}
+.foot3{
+	width: 990px;
+	margin: 18px auto;
+}
+.foot3 div{
+	float: left;
+}
+.my_img_weixin,.my_img_weibo{
+	display: block;
+	width: 62px;
+	height: 62px;
+}
+.foot3_weixin,.foot3_weibo,.foot3_app{
+	width: 244px;height: 80px;
+	border: 1px solid #e3e3e3;
+	margin-right: 5px;
+}
