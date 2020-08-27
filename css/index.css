@@ -1,0 +1,93 @@
+*{margin: 0;padding: 0;}
+.lunbo img{
+	display: block;
+	width: 1190px;
+	height: 400px;
+	margin: 0 auto;
+}
+.index_recommend{
+	width: 1190px;
+	height: 520px;
+	margin: 0 auto;
+	margin-top: 10px;
+	display: flex;
+	justify-content: space-between;
+}
+.tuijian{
+	width: 880px;
+	height: 518px;
+	background-color: #F0E4D4;
+	padding-top: 4px;
+	color: #c17100;
+	background-image: url();
+}
+.jingxuan{
+	width: 290px;height: 518px;
+	border: 1px solid #ccc;
+	border-left: 0;
+}
+.tuijian1{
+	font-size: 24px;
+}
+.tuijian2{
+	font-size: 14px;
+}
+.louti1{
+	width: 1190px;
+	height: 30px;
+	margin: 30px auto;
+	border-bottom: 1px solid #006330;
+	
+}
+.louti1 .icon-shuiguo1{
+	font-size: 32px;
+	color: #FFC501;
+}
+.louti1 .jiapei{
+	font-size: 22px;
+	color: #333534;
+	font-weight: bold;
+}
+.shangpin_right{
+	display: block;
+	float: right;
+	
+}
+.shangpin_right a{
+	text-decoration: none;
+	font-size: 14px;
+	color: #787677;
+}
+.yilou{
+	width: 1190px;
+	height: 1000px;
+	
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.yilou div{
+	border: 1px solid #000;
+	width: 290px;
+	height: 471px;
+
+}
+.yilou .yilou_two{
+	width: 288px;
+	height: 181px;
+	margin: 0 auto;
+}
+.yilou div img{
+	width: 288px;height: 288px;
+}
+.yilou_two .title{
+	font-size: 14px;
+	
+	font-weight: bold;
+	
+}
+.yilou_two a{
+	color: #000000;
+	text-decoration: none;
+}

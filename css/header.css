@@ -53,6 +53,7 @@
 	width: 1190px;
 	height: 110px;
 	margin: 10px auto;
+
 }
 .nav1{
 	float: left;
@@ -69,7 +70,6 @@
 	line-height: 42px;
 	margin-top: 27px;
 	padding-left: 12px;
-	
 }
 .nav2 .nav2_song{
 	float: left;
