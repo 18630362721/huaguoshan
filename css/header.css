@@ -53,7 +53,6 @@
 	width: 1190px;
 	height: 110px;
 	margin: 10px auto;
-
 }
 .nav1{
 	float: left;
@@ -181,7 +180,7 @@
 	width: 62px;
 	font-size: 12px;
 	position: absolute;
-	top: 9px;left: 235px;
+	top: 9px;left: 245px;
 	color: #777777;
 	font-weight: bold;
 }
@@ -217,15 +216,39 @@
 }
 .gouwuche{
 	float: right;
-	width: 250px;
+	width: 286px;
 	height: 30px;
 	background-color: #FFB900;
+	position: relative;
 }
 .gouwuche .icon-gouwuche{
 	font-size: 18px;
 }
 .gouwuche .icon-xiala{
+	font-size: 12px;
 	color: #FFFFFF;
 	position: absolute;
-	top: 0px;left: 0px;
+	top: 10px;right: 15px;
 }
+.fahuo .icon-zhongguoditu{
+	color: #78BF25;
+	font-size: 18px;
+}
+.gouwuche .jiage{
+	color: #db2d22;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
