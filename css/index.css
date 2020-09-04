@@ -22,7 +22,7 @@
 	background-color: #F0E4D4;
 	padding-top: 4px;
 	color: #c17100;
-	
+	position: relative;
 }
 .tuijian .tuijian_shangpin{
 	margin-top: 5px;
@@ -30,7 +30,7 @@
 	display: flex;
 	justify-content: space-between;
 }
-.tuijian_shangpin div{
+.tuijian_shangpin #d1,#d2,#d3{
 	width: 260px;
 	margin: 0px 5px;
 	padding: 10px 10px;
@@ -39,6 +39,14 @@
 	color: #777;
 	height: 430px;
 }
+
+.xiaji_d1{
+	width: 260px;
+  position: absolute;
+	top: 300px;
+}
+
+
 .jingxuan{
 	width: 298px;height: 518px;
 	border: 1px solid #ccc;
@@ -51,40 +59,51 @@
 .tuijian2{
 	font-size: 14px;
 }
-.tuijian_shangpin img{
+.tuijian_shangpin  img{
 	width: 260px;
 	height: 260px;
+	display: block;
+	position: absolute;
+  left: 15px;
 }
-.xiaji .title1{
+ /* 
+.xiaji_d1{
+	width: 260px;
+	position: absolute;
+	top: 289px;left: 20px;
+}
+*/
+.xiaji_d1 .title1{
 	font-size: 14px;
 	color: #000000;
 	font-weight: bold;
 	padding-top: 8px;
 }
-.xiaji .title1_2{
+.xiaji_d1 .title1_2{
 	font-size: 12px;
 	color: #000000;
 	padding-top: 10px;
 }
-.xiaji .price1{
+.xiaji_d1 .price1{
 	font-size: 14px;
 	color: #777;
 	padding-top: 8px;
 }
-.xiaji .price2{
+.xiaji_d1 .price2{
 	font-size: 20px;
 	font-weight: bold;
 	color: #C20000;
 }
-.xiaji .renshu{
+.xiaji_d1 .renshu{
 	font-size: 12px;
 	color: #74be21;
 	padding-top: 12px;
 }
-.xiaji .renshu2{
+.xiaji_d1 .renshu2{
 	color: #777;
 }
-.xiaji a{
+
+.xiaji_d1 a{
 	display: block;
 	width: 100px;
 	height: 24px;
@@ -96,9 +115,11 @@
 	text-decoration: none;
 	border-radius: 1px 1px;
 }
+*/
 .xiaji .icon-gouwuche{
 	padding-left: 10px;
 }
+
 .louti1{
 	width: 1190px;
 	height: 30px;
