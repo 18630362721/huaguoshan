@@ -43,10 +43,20 @@
 .xiaji_d1{
 	width: 260px;
   position: absolute;
-	top: 300px;
+	top: 290px;
 }
-
-
+#d2 img{
+	width: 260px;height: 260px;
+	position: absolute;
+	top: 10px;
+	left: 310px;
+}
+#d3 img{
+	width: 260px;height: 260px;
+	position: absolute;
+	top: 10px;
+	left: 605px;
+}
 .jingxuan{
 	width: 298px;height: 518px;
 	border: 1px solid #ccc;
@@ -66,13 +76,7 @@
 	position: absolute;
   left: 15px;
 }
- /* 
-.xiaji_d1{
-	width: 260px;
-	position: absolute;
-	top: 289px;left: 20px;
-}
-*/
+
 .xiaji_d1 .title1{
 	font-size: 14px;
 	color: #000000;
@@ -114,8 +118,9 @@
 	float: right;
 	text-decoration: none;
 	border-radius: 1px 1px;
+	padding-left: 10px;
 }
-*/
+
 .xiaji .icon-gouwuche{
 	padding-left: 10px;
 }
