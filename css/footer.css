@@ -1,8 +1,12 @@
 *{margin: 0;padding: 0;}
+body{
+	background-color: #FFFFFF;
+	
+}
 .footer_nav{
 	width: 100%;
 	border-top:1px solid  #dfdfdf;
-
+	background-color: #FFFFFF;
 }
 .foot{
 	width: 100%;
@@ -13,6 +17,8 @@
 	margin: 0 auto;
 	position: relative;
 	margin-bottom: 30px;
+	background-color: #FFFFFF;
+
 }
 .foot_center li{
 	font-size: 16px;
@@ -68,6 +74,8 @@ ul{
 	width: 990px;
 	height: 70px;
 	margin: 18px auto;
+
+
 }
 .foot3 div{
 	float: left;
